@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>emotiv_msgs</name>
+  <version>1.0.0</version>
+  <description>The emotiv_msgs package</description>
+
+  <maintainer email="ibrahim.jad@outlook.dk">Ibrahim Jad Masri</maintainer>
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

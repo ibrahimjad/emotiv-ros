@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+
+  <name>emotiv_driver</name>
+  <version>1.0.0</version>
+  <description>The emotiv_driver package</description>
+
+  <maintainer email="ibrahim.jad@outlook.dk">Ibrahim Jad Masri</maintainer>
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
