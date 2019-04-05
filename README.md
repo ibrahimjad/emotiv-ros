@@ -19,7 +19,9 @@ Change directory to your ROS workspace and then type the following:
 
 ## Usage
 A pre-compiled binary can be used to start up quickly using the following command:
+
 `rosrun emotiv_driver emotiv_node`
 
-This will publish raw EEG signals of channel **O1** and **O2** to **_/emotiv_raw_** topic
+This will publish raw EEG signals of channel *O1* and *O2* to **/emotiv_raw** topic
+
 Raw data should be around 4k and contact quality above 3k for getting good readings
