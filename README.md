@@ -8,9 +8,13 @@ This package is based on [Emokit](https://github.com/openyou/emokit) by The Open
 Change directory to your ROS workspace and then type the following:
 
 `cd src`
+
 `git clone https://github.com/ibrahimjad/emotiv-ros.git`
+
 `cd ..`
+
 `catkin build emotiv_driver emotiv_msgs`
+
 `source ~/.bashrc`
 
 ## Usage
