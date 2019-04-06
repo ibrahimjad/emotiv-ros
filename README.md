@@ -11,7 +11,11 @@ Change directory to your ROS workspace and then type the following:
 
 `git clone https://github.com/ibrahimjad/emotiv-ros.git`
 
-`cd ..`
+`cd emotiv-ros/emotiv_driver/`
+
+`sudo mv -f epoc.rules /etc/udev/rules.d/`
+
+`cd ../../..`
 
 `catkin build emotiv_driver emotiv_msgs`
 
