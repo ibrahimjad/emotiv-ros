@@ -1,2 +1,14 @@
+channelData AF3
+channelData F7
+channelData F3
+channelData FC5
+channelData T7
+channelData P7
 channelData O1
 channelData O2
+channelData P8
+channelData T8
+channelData FC6
+channelData F4
+channelData F8
+channelData AF4

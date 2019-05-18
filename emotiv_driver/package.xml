@@ -9,5 +9,6 @@
   <license>GPLv3</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>emotiv_msgs</exec_depend>
 
 </package>
