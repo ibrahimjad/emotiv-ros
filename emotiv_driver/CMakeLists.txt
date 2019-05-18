@@ -5,3 +5,8 @@ find_package(catkin)
 
 catkin_package(
 )
+
+install(FILES
+  launch/headset.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
