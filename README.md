@@ -1,6 +1,6 @@
 # Emotiv ROS package
 
-**ROS package for getting raw EEG signals from Emotiv Epoc+ Headset**
+**ROS package for getting raw EEG signals from Emotiv EPOC+ Headset**
 
 This package is based on [Emokit](https://github.com/openyou/emokit) by The OpenYou Organization.
 
@@ -24,6 +24,6 @@ A pre-compiled binary can be used to start up quickly using the following comman
 rosrun emotiv_driver emotiv_node
 ```
 
-This will publish raw EEG signals of channel *O1* and *O2* to **/emotiv_raw** topic
+This will publish raw EEG signals of all channels to **/emotiv_raw** topic
 
-Raw data should be around 4k and contact quality above 3k for getting good readings
+Raw data should be around 4k and contact quality above above 1k for getting good readings
