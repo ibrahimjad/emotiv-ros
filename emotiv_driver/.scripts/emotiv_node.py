@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
 import rospy
-import sys
 from emotiv_msgs.msg import Data
 from emokit.emotiv import Emotiv
-from emokit.packet import EmotivExtraPacket
 
-sys.tracebacklimit=0
 
 def updateMsg(packet, msg):
     msg.header.stamp = rospy.Time.now()
@@ -45,7 +42,7 @@ def updateMsg(packet, msg):
 def main():
     pub = rospy.Publisher('emotiv_raw', Data, queue_size=1000)
     rospy.init_node('emotiv_node')
-    rate = rospy.Rate(256)
+    rate = rospy.Rate(128)
     msg = Data()
 
     with Emotiv(display_output=False, verbose=False, write=False, force_epoc_mode=True, is_research=True) as headset:
@@ -53,9 +50,8 @@ def main():
             try:
                 packet = headset.dequeue()
                 if packet is not None:
-                    if type(packet) != EmotivExtraPacket:
-                        updateMsg(packet, msg)
-                        pub.publish(msg)
+                    updateMsg(packet, msg)
+                    pub.publish(msg)
                 rate.sleep()
             except rospy.ROSInterruptException:
                 headset.stop()

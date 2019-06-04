@@ -84,7 +84,7 @@ class EmotivCrypto:
             # If stop signal is received and all the pending data in the encrypted Queue is processed, stop running.
             self.lock.acquire()
             if self._stop_signal and self._encrypted_queue.empty():
-#                print("Crypto thread stopping.")
+                print("Crypto thread stopping.")
                 self.running = False
             time.sleep(0.00001)
         self.lock.release()
@@ -126,7 +126,7 @@ class EmotivCrypto:
             else:
                 return AES.new(new_crypto_key(self.serial_number, self.verbose))
         else:
-            return AES.new(crypto_key(self.serial_number, self.is_research, verbose), AES.MODE_ECB)
+            return AES.new(epoc_plus_crypto_key(self.serial_number), AES.MODE_ECB)
 
     def add_task(self, data):
         """

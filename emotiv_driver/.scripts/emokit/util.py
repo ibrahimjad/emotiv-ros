@@ -148,14 +148,14 @@ def get_quality_scale(quality_value, old_model=False):
     if old_model:
         return quality_value // 540
     else:
-        return quality_value // 540
+        return quality_value // 1024
 
 
 def get_quality_scale_level(quality_value, old_model=False):
     if old_model:
         return get_quality_level(quality_value // 540, old_model)
     else:
-        return get_quality_level(quality_value // 540, False)
+        return get_quality_level(quality_value // 1024, False)
 
 
 def get_quality_level(quality_scale, old_model=False):
@@ -183,7 +183,7 @@ def get_quality_scale_level_color(quality_value, old_model=False):
     if old_model:
         quality_value = quality_value // 520
     else:
-        quality_value = quality_value // 520
+        quality_value = quality_value // 1024
     return get_quality_color(quality_value, old_model)
 
 
@@ -282,7 +282,7 @@ def print_hid_enumerate(platform, hidapi):
     for device in devices:
         print_device_info[platform](device)
         print_hid_device_info_all(device)
-#    print("Please include this information if you open a new issue.")
+    print("Please include this information if you open a new issue.")
 
 
 get_hid_devices = {

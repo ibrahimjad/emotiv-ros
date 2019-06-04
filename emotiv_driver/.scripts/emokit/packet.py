@@ -203,7 +203,7 @@ class EmotivOldPacket(object):
         # print([ord(c) for c in data])
         self.battery = None
         if self.counter > 127:
-            self.battery = 0
+            self.battery = battery_values[str(self.counter)]
             self.counter = 128
         self.sync = self.counter == 0xe9
         self.sensors = sensors_mapping.copy()

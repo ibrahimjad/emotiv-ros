@@ -50,7 +50,7 @@ class Emotiv(object):
         Expect performance to suffer when writing data to a csv, maybe.
 
         """
-#        print("Initializing Emokit...")
+        print("Initializing Emokit...")
         self.new_format = False
         self.running = False
         self.chunk_writes = chunk_writes
@@ -112,12 +112,12 @@ class Emotiv(object):
         self.start()
 
     def initialize_output(self):
-#        print("Initializing Output Thread...")
+        print("Initializing Output Thread...")
         if self.display_output:
             self.output = EmotivOutput(serial_number=self.serial_number, old_model=self.old_model, verbose=self.verbose)
 
     def initialize_reader(self):
-#        print("Initializing Reader Thread...")
+        print("Initializing Reader Thread...")
         if self.input_source != "emotiv":
             # If the name of the input source starts with emotiv_encrypted, get the serial number.
             if self.input_source.startswith('emotiv_encrypted'):
@@ -140,7 +140,7 @@ class Emotiv(object):
                 self.serial_number = self.reader.serial_number
 
     def initialize_writer(self):
-#        print("Initializing Writer Thread(s)...")
+        print("Initializing Writer Thread(s)...")
         if self.write:
             if self.write_encrypted:
                 # Only write encrypted if we are reading encrypted.
@@ -180,7 +180,7 @@ class Emotiv(object):
                 self.value_writer.start()
 
     def initialize_crypto(self):
-#        print("Initializing Crypto Thread...")
+        print("Initializing Crypto Thread...")
         if self.read_encrypted:
             self.crypto = EmotivCrypto(self.serial_number, self.is_research, verbose=self.verbose,
                                        force_epoc_mode=self.force_epoc_mode, force_old_crypto=self.force_old_crypto)
@@ -290,6 +290,7 @@ class Emotiv(object):
                                                                               decrypted=True,
                                                                               data=EmotivOldPacket(raw_data)))
                     else:
+                        # TODO: Implement read from values.
                         pass
                 else:
                     if self.input_source != 'emotiv' and self.read_encrypted:
@@ -383,12 +384,12 @@ class Emotiv(object):
                     stale_rx += 1
                 last_packets_received = self.packets_received
                 if restarting_reader and self.reader.stopped:
-#                    print("Restarting Reader")
+                    print("Restarting Reader")
                     stale_rx = 0
                     self.initialize_reader()
                     self.reader.start()
                     restarting_reader = False
-#                    print("Reader Thread Restarted")
+                    print("Reader Thread Restarted")
 
                 if stale_rx > 5 and not restarting_reader:
                     self.reader.stop()

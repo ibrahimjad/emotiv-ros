@@ -104,7 +104,7 @@ class EmotivReader(object):
                 time.sleep(0.00001)
             self.lock.acquire()
             if self._stop_signal:
-#                print("Reader stopping...")
+                print("Reader stopping...")
                 self.running = False
         if self.file is not None:
             self.file.close()
@@ -122,7 +122,7 @@ class EmotivReader(object):
                 hidapi.hid_exit()
             except Exception:
                 pass
-#        print("Reader stopped...")
+        print("Reader stopped...")
         self.stopped = True
         return
 
@@ -196,7 +196,7 @@ class EmotivReader(object):
             path, serial_number = hid_enumerate(hidapi, self.platform)
             if len(path) == 0:
                 print_hid_enumerate(system_platform, hidapi)
-                pass
+                raise Exception("Device not found")
             self.serial_number = serial_number
             self.hid = hidapi.hid_open_path(path)
 
