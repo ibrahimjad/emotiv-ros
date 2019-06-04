@@ -21,7 +21,7 @@ source ~/.bashrc
 ## Usage
 A pre-compiled binary can be used to start up quickly using the following command:
 ```bash
-rosrun emotiv_driver emotiv_node
+roslaunch emotiv_driver headset.launch
 ```
 
 This will publish raw EEG signals of all channels to **/emotiv_raw** topic
